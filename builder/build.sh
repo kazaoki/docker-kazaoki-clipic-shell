@@ -1,1 +1,1 @@
-docker build -t kazaoki/textimage:latest .
+docker build -t kazaoki/clipic:latest .

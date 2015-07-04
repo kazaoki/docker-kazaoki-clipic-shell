@@ -6,7 +6,11 @@ MAINTAINER kazaoki lab.
 RUN apk --update add php-gd php-openssl && \
 	rm -rf /var/cache/apk/*
 
+# Environment variables
+# ---------------------
+ENV TERM=xterm
+
 # Added shell files
 # -----------------
-ADD textimage.php /opt/textimage.php
-CMD ["/usr/bin/php", "/opt/textimage.php"]
+ADD clipic.php /opt/clipic.php
+CMD ["/usr/bin/php", "/opt/clipic.php"]

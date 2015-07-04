@@ -2,7 +2,9 @@
 
 // general
 // -------
-$width = getenv('TEXTIMAGE_WIDTH') ? getenv('TEXTIMAGE_WIDTH') : 100;
+error_reporting(E_ALL & ~E_NOTICE);
+$width = getenv('CLIPIC_WIDTH') ? getenv('CLIPIC_WIDTH') : `tput cols`;
+echo $width."\n";
 $font_aspect = 2.0;
 
 // save a image
@@ -21,6 +23,7 @@ file_put_contents($file, $data);
 // get image info
 // --------------
 list($img_width, $img_height, $mime_type, $attr) = getimagesize($file);
+if(!$img_width) { exit; }
 $x = $width;
 $y = Floor((($img_height/$img_width)*$width)/$font_aspect);
 switch($mime_type){
