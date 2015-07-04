@@ -24,7 +24,7 @@ INSTALL
 ```
 $ curl -o clipic -L https://raw.githubusercontent.com/kazaoki/docker-kazaoki-clipic-shell/master/clipic.sh
 $ chmod +x clipic
-$ mv clipic /usr/bin/
+$ sudo mv clipic /usr/bin/
 ```
 
 `kazaoki/clipic`イメージは`clipic.sh`実行時に[Docker Hub](https://registry.hub.docker.com/)から自動的にpullされますので、docker環境とbashとかが入っていれば特に他には必要ないです。多分。

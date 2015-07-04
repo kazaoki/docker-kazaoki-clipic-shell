@@ -1,4 +1,7 @@
 #!/bin/sh
+
+# version 0.0.1
+
 docker rm -f "kazaoki-clipic" >/dev/null 2>&1
 CLIPIC_WIDTH=$(tput cols)
 if [[ $2 != "" ]]; then
