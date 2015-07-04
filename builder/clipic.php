@@ -15,7 +15,7 @@ while( !feof(STDIN) ) {
 $file = '/tmp/target.img';
 if(preg_match('/^https?\:\/\//', $data)) {
 	$url = trim($data);
-	`wget -O $file $data >/dev/null 2>&1`;
+	`wget -q -O $file $data >/dev/null 2>&1`;
 } else {
 	file_put_contents($file, $data);
 }
