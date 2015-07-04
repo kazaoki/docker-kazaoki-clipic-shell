@@ -3,8 +3,7 @@
 // general
 // -------
 error_reporting(E_ALL & ~E_NOTICE);
-$width = getenv('CLIPIC_WIDTH') ? getenv('CLIPIC_WIDTH') : `tput cols`;
-echo $width."\n";
+$width = getenv('CLIPIC_WIDTH') ? getenv('CLIPIC_WIDTH') : 50;
 $font_aspect = 2.0;
 
 // save a image
@@ -13,12 +12,14 @@ $data = '';
 while( !feof(STDIN) ) {
 	$data .= fgets(STDIN);
 }
+$file = '/tmp/target.img';
 if(preg_match('/^https?\:\/\//', $data)) {
 	$url = trim($data);
-	$data = file_get_contents($url);
+	`wget -O $file $data >/dev/null 2>&1`;
+} else {
+	file_put_contents($file, $data);
 }
-$file = '/tmp/target.img';
-file_put_contents($file, $data);
+unset($data);
 
 // get image info
 // --------------
@@ -90,7 +91,7 @@ for($step_y=0; $step_y<$y; $step_y++){
 			(($img_width / ($x-1)) * $step_x ) - ($step_x==$x-1?1:0), # <- なぜかMAX値の時だけ正常に取れないので-1px
 			(($img_height / ($y-1)) * $step_y ) - ($step_y==$y-1?1:0) # <-
 		);
-		if(!preg_match('/^([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$/i', str_pad(dechex($true_color), 6, '0', STR_PAD_LEFT), $rgb)) {
+		if(!preg_match('/([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$/i', str_pad(dechex($true_color), 6, '0', STR_PAD_LEFT), $rgb)) {
 			fputs(STDERR, "Can't get imagecolorat(): (step_x=${step_x}, step_y=${step_y}) $true_color\n");
 		}
 		$index_color = imagecolorclosest($color_map, hexdec($rgb[1]), hexdec($rgb[2]), hexdec($rgb[3]));

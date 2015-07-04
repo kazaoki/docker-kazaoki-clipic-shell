@@ -3,12 +3,8 @@ MAINTAINER kazaoki lab.
 
 # Add PHP & etc
 # -------------
-RUN apk --update add php-gd php-openssl && \
+RUN apk --update add php-gd openssl && \
 	rm -rf /var/cache/apk/*
-
-# Environment variables
-# ---------------------
-ENV TERM=xterm
 
 # Added shell files
 # -----------------
