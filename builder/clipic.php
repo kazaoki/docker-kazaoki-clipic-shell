@@ -3,7 +3,7 @@
 // general
 // -------
 error_reporting(E_ALL & ~E_NOTICE);
-$width = getenv('CLIPIC_WIDTH') ? getenv('CLIPIC_WIDTH') : 50;
+$width = getenv('CLIPIC_WIDTH') ? getenv('CLIPIC_WIDTH') : 70;
 $font_aspect = 2.0;
 
 // save a image
