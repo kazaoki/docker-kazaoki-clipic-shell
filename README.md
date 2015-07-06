@@ -2,7 +2,7 @@
 NAME
 ====
 
-docker-kazaoki-clipic-shell - Dockerイメージのkazaoki/clipicを操作するシェルスクリプト
+docker-kazaoki-clipic-shell - Dockerイメージの[kazaoki/clipic](https://registry.hub.docker.com/u/kazaoki/clipic/)を操作するシェルスクリプト
 
 SYNOPSIS
 --------
