@@ -7,9 +7,11 @@ docker-kazaoki-clipic-shell - Dockerイメージのkazaoki/clipicを操作する
 SYNOPSIS
 --------
 
-	# picture to char by ANSI 256 colors. (use docker image:kazaoki/clipic)
-	clipic cat.jpg
-	clipic http://hogehoge.hoge/dog.png
+	clipic https://assets-cdn.github.com/images/modules/logos_page/Octocat.png
+	clipic cat.jpg 50
+
+![cap](https://cloud.githubusercontent.com/assets/6366870/8517636/a16ad142-23fd-11e5-8be4-a7ee2822cae5.png)
+
 
 DESCRIPTION
 -----------
@@ -36,12 +38,6 @@ RUN
 
 基本的にこれだけです。
 横幅の指定をしない場合はコンソールの横幅になります。（コンソールの横幅も取得できない場合はデフォルトで50となります）
-
-
-サンプルイメージ
-----------------
-
-（そのうち）
 
 
 FAQ
