@@ -29,7 +29,8 @@ $ chmod +x clipic
 $ sudo mv clipic /usr/bin/
 ```
 
-`kazaoki/clipic`イメージは`clipic.sh`実行時に[Docker Hub](https://registry.hub.docker.com/)から自動的にpullされますので、docker環境とbashとかが入っていれば特に他には必要ないです。多分。
+`kazaoki/clipic`イメージは`clipic`コマンド実行時に[Docker Hub](https://registry.hub.docker.com/)から自動的にpullされますので、docker環境とbashとかが入っていれば特に他には必要ないです。多分。
+また、初回はこのDockerイメージのダウンロードで数十秒程時間がかかりますが、次回以降は一瞬で実行できます。
 
 RUN
 ---
